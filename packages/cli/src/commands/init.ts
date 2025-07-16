@@ -5,6 +5,8 @@ import path from 'path';
 import inquirer from 'inquirer';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import https from 'https';
+import { DORA_VARIABLES_URL } from '../utils/const';
 
 type AliasMap = Record<string, string>;
 
@@ -74,10 +76,17 @@ function writeDoraConfig(
 
     fs.writeFileSync(DORA_CONFIG_FILENAME, JSON.stringify(config, null, 2));
     log(`✅ ${DORA_CONFIG_FILENAME} created.`);
-
-    const variablesPath = path.resolve('src/styles/variables.scss');
 }
 
+function fetchVariables(): Promise<string> {
+    return new Promise((resolve, reject) => {
+        https.get(DORA_VARIABLES_URL, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => resolve(data));
+        }).on('error', reject);
+    });
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -112,8 +121,9 @@ export async function runInit() {
     const absPath = path.resolve(globalPath);
     if (!fs.existsSync(absPath)) {
         fs.mkdirSync(path.dirname(absPath), { recursive: true });
-        fs.writeFileSync(absPath, `/* ${styleType.toUpperCase()} file created by Dora Styles */\n`);
-        log(`✅ Created ${globalPath}`);
+        const variables = await fetchVariables();
+        fs.writeFileSync(absPath, `/* ${styleType.toUpperCase()} file created by Dora Styles */\n\n${variables}`);
+        log(`✅ Created ${globalPath} with Dora variables.`);
     }
 
     log('🎉 Dora Styles setup complete!');
