@@ -1,0 +1,37 @@
+{
+  "name": "dora-styles",
+  "version": "0.0.4",
+  "description": "dora-styles is a modular front-end styling library paired with a CLI tool, designed to help developers quickly scaffold utility-first styling, reusable UI components, and common hooks into modern web projects.",
+  "license": "MIT",
+  "author": "Doremon <me@doremon.me>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "dora-styles": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx ./src/index.ts",
+    "build": "tsup",
+    "test": "echo \"No tests defined yet\""
+  },
+  "keywords": [
+    "styles",
+    "cli",
+    "css",
+    "scss",
+    "react",
+    "hooks",
+    "components",
+    "typescript",
+    "frontend"
+  ],
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.8",
+    "tsup": "^8.5.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.2.0"
+  }
+}

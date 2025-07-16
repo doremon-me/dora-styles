@@ -1,43 +1,71 @@
-# Turborepo starter
 
-This Turborepo starter is maintained by the Turborepo core team.
+# Dora Styles Monorepo
 
-## Using this example
+A modern monorepo for building, sharing, and documenting reusable React components, hooks, and styles. Dora Styles is designed to help you quickly scaffold, develop, and document UI building blocks for your projects.
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## Monorepo Structure
 
 ```
-cd my-turborepo
+.
+├── apps/
+│   ├── docs/   # Documentation site (Next.js)
+│   └── web/    # Example web app (Next.js)
+├── packages/
+│   ├── cli/    # Dora Styles CLI tool
+│   └── library/# Shared components, hooks, and styles
+├── package.json
+├── turbo.json
+└── README.md
+```
+
+### apps/
+- **docs/**: Documentation site for Dora Styles, built with Next.js. Use this to explore and showcase your components and styles.
+- **web/**: Example Next.js app to demo and test your shared UI code in a real project context.
+
+### packages/
+- **cli/**: Command-line tool to scaffold new components, hooks, and styles, and to initialize Dora Styles in your project.
+- **library/**: The core package containing all reusable React components, hooks, and SCSS styles.
+
+## Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+2. **Run the documentation site:**
+   ```bash
+   cd apps/docs
+   npm run dev
+   ```
+
+3. **Run the example web app:**
+   ```bash
+   cd apps/web
+   npm run dev
+   ```
+
+4. **Use the CLI tool:**
+   ```bash
+   cd packages/cli
+   npx dora-styles <command>
+   ```
+
+## CLI Commands
+See [`packages/cli/README.md`](./packages/cli/README.md) for full CLI usage and commands.
+
+## Development
+- All packages use TypeScript.
+- Shared code lives in `packages/library`.
+- Use Turborepo for fast, incremental builds and task running.
+
+## Contributing
+Pull requests and issues are welcome! Please open an issue to discuss major changes before submitting a PR.
+
+## License
+MIT
 
 # With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
 turbo build
