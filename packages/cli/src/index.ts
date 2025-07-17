@@ -5,11 +5,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { runInit } from './commands/init.js';
 import { printHelp } from './commands/help.js';
+import { runAddStyle } from './commands/addStyle.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Read package version safely
 function getCLIVersion(): string {
   const pkgPath = path.resolve(__dirname, '../package.json');
   try {
@@ -42,6 +42,25 @@ async function main() {
     case 'init':
       await runInit();
       break;
+
+    case 'add': {
+      const subCommand = args[1];
+      const styleName = args[2];
+
+      if (subCommand === 'styles') {
+        if (!styleName) {
+          console.error('❌ Please provide a style name. Example: dora-styles add styles button');
+          process.exit(1);
+        }
+        await runAddStyle(styleName);
+      } else {
+        console.error(`❌ Unknown add sub-command: ${subCommand}`);
+        printHelp();
+        process.exit(1);
+      }
+      break;
+    }
+
     default:
       console.error(`❌ Unknown command: ${command}`);
       printHelp();

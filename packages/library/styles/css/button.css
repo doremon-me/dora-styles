@@ -1,0 +1,14 @@
+.btn {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary-foreground);
+  color: var(--primary);
+}
