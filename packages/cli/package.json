@@ -1,6 +1,6 @@
 {
   "name": "dora-styles",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "dora-styles is a modular front-end styling library paired with a CLI tool, designed to help developers quickly scaffold utility-first styling, reusable UI components, and common hooks into modern web projects.",
   "license": "MIT",
   "author": "Doremon <me@doremon.me>",
