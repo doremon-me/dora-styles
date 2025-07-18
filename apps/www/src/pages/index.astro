@@ -1,12 +1,1248 @@
+---
+// src/pages/dora-styles.astro
+export const prerender = true;
+
+const title = "Dora Styles - Modern CSS Library";
+const description =
+  "Elegant, intuitive CSS for modern UIs. A lightweight, developer-friendly CSS library that combines utility-first design with component-based styling.";
+const canonicalURL = "https://dorastyles.com";
+---
+
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/dora-styles-og.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/dora-styles-og.jpg" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/hero-bg.webp" as="image" />
   </head>
+
   <body>
-    <button class="btn">Click Me</button>
+    <div class="dev-banner-top">
+      🚧 Dora Styles is <strong>under active development</strong>. Features and
+      docs may change rapidly.
+    </div>
+    <main class="hero">
+      <!-- Background Pattern -->
+      <div class="bg-pattern"></div>
+      <div class="bg-gradient"></div>
+      <div class="bg-mesh"></div>
+
+      <!-- Navigation -->
+      <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 4L24 4C26.2091 4 28 5.79086 28 8L28 24C28 26.2091 26.2091 28 24 28L8 28C5.79086 28 4 26.2091 4 24L4 8C4 5.79086 5.79086 4 8 4Z"
+                stroke="url(#gradient)"
+                stroke-width="2"
+                fill="none"></path>
+              <path
+                d="M12 12L20 12M12 16L20 16M12 20L16 20"
+                stroke="url(#gradient)"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" style="stop-color:#3b82f6"></stop>
+                  <stop offset="100%" style="stop-color:#8b5cf6"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="logo-text">Dora Styles</span>
+          </div>
+
+          <div class="nav-actions">
+            <a
+              href="https://github.com/doremon-me/dora-styles"
+              class="github-btn"
+              aria-label="View Dora Styles on GitHub"
+              style="display: flex; align-items: center; gap: 0.5rem;"
+            >
+              <img
+                src="https://img.shields.io/github/stars/doremon-me/dora-styles?style=social"
+                alt="GitHub stars"
+                style="height: 24px; margin-right: 0.5rem;"
+              />
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Content -->
+      <section class="hero-content">
+        <div class="content-wrapper">
+          <!-- Left Column - Text Content -->
+          <div class="text-content">
+            <div class="badges">
+              <span class="badge">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"
+                  ></path>
+                </svg>
+                Open Source
+              </span>
+              <span class="badge">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                MIT Licensed
+              </span>
+              <span class="badge">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                Supports Tailwind & Vanilla
+              </span>
+            </div>
+
+            <p class="description">
+              A lightweight, developer-friendly CSS library that combines the
+              flexibility of utility-first design with the elegance of
+              component-based styling.<br />
+              <strong>Build beautiful interfaces faster</strong> with pre-crafted
+              components and smart defaults.
+            </p>
+
+            <div class="cta-section">
+              <div class="cta-buttons">
+                <button class="btn btn-primary" id="get-started-btn">
+                  <span>Get Started</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                  </svg>
+                </button>
+                <a
+                  href="https://github.com/doremon-me/dora-styles"
+                  class="btn btn-secondary"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    ></path>
+                  </svg>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+
+              <div class="quick-install">
+                <span class="install-label">Quick Initialization:</span>
+                <code class="install-code" id="install-command"
+                  >npx dora-styles@latest init</code
+                >
+                <button
+                  class="copy-btn"
+                  id="copy-btn"
+                  aria-label="Copy install command"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"
+                    ></rect>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Code Preview -->
+          <div class="code-preview">
+            <div class="code-window">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <span class="code-title">styles.css</span>
+                <div class="code-actions">
+                  <button class="code-action" aria-label="Copy code">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"
+                      ></rect>
+                      <path
+                        d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="code-content"
+                style="display: flex; flex-direction: column; gap: 0.5rem;"
+              >
+                <code style="display: flex; gap: 0.5rem;">
+                  <div class="code-keyword">npx</div>
+                  <div class="code-string">dora-styles@latest init</div>
+                </code>
+                <span class="code-comment">/* Initialize dora-styles */</span>
+                <code style="display: flex; gap: 0.5rem;">
+                  <div class="code-keyword">npx</div>
+                  <div class="code-string"
+                    >dora-styles@latest add styles button</div
+                  >
+                </code>
+                <span class="code-comment"
+                  >/* 🚧 Dora Styles is under active development. Features and
+                  docs may change rapidly. */</span
+                >
+              </div>
+            </div>
+
+            <!-- Feature Pills -->
+            <div class="feature-pills">
+              <div class="pill">
+                <span class="pill-icon">⚡</span>
+                <span>Lightning Fast</span>
+              </div>
+              <div class="pill">
+                <span class="pill-icon">🎨</span>
+                <span>Beautiful Defaults</span>
+              </div>
+              <div class="pill">
+                <span class="pill-icon">🔧</span>
+                <span>Fully Customizable</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="float-element float-1"></div>
+        <div class="float-element float-2"></div>
+        <div class="float-element float-3"></div>
+      </div>
+    </main>
+
+    <script lang="js">
+      // Copy functionality
+      document
+        .getElementById("copy-btn")
+        ?.addEventListener("click", async () => {
+          const command = "npx dora-styles@latest init";
+          try {
+            await navigator.clipboard.writeText(command);
+            const btn = document.getElementById("copy-btn");
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"/>
+          </svg>
+        `;
+            setTimeout(() => {
+              btn.innerHTML = originalHTML;
+            }, 2000);
+          } catch (err) {
+            console.error("Failed to copy:", err);
+          }
+        });
+
+      // Get Started button animation
+      document
+        .getElementById("get-started-btn")
+        ?.addEventListener("click", () => {
+          alert("🚧 Dora Styles is under active development. Features and docs may change rapidly. Please check back soon!");
+        });
+
+      // Smooth scroll and interaction animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".text-content, .code-preview")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      // Parallax effect for background
+      window.addEventListener("mousemove", (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+
+        const xPos = (clientX / innerWidth) * 100;
+        const yPos = (clientY / innerHeight) * 100;
+
+        document.documentElement.style.setProperty("--mouse-x", `${xPos}%`);
+        document.documentElement.style.setProperty("--mouse-y", `${yPos}%`);
+      });
+    </script>
   </body>
 </html>
+
+<style>
+  :root {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --primary-blue: #3b82f6;
+    --primary-purple: #8b5cf6;
+    --primary-green: #10b981;
+    --surface-glass: rgba(255, 255, 255, 0.1);
+    --surface-glass-hover: rgba(255, 255, 255, 0.15);
+    --border-glass: rgba(255, 255, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #e5e7eb;
+    --text-muted: #9ca3af;
+    --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: #0a0a0a;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  .dev-banner-top {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    background: linear-gradient(90deg, #ef4444 0%, #f59e0b 100%);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1rem;
+    z-index: 999;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.01em;
+    animation: fadeInUp 0.8s ease;
+  }
+
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      #0f0f23 0%,
+      #1a1a2e 30%,
+      #16213e 70%,
+      #0f3460 100%
+    );
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Background Effects */
+  .bg-pattern {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(59, 130, 246, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(139, 92, 246, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(16, 185, 129, 0.08) 0%,
+        transparent 50%
+      );
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  .bg-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(59, 130, 246, 0.05) 50%,
+        transparent 70%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 30%,
+        rgba(139, 92, 246, 0.05) 50%,
+        transparent 70%
+      );
+    animation: shift 12s ease-in-out infinite;
+  }
+
+  .bg-mesh {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: mesh-float 20s linear infinite;
+  }
+
+  .floating-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .float-element {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite;
+  }
+
+  .float-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .float-2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 5s;
+  }
+
+  .float-3 {
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 10s;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shift {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(10px) translateY(-10px);
+    }
+    75% {
+      transform: translateX(-10px) translateY(10px);
+    }
+  }
+
+  @keyframes mesh-float {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-30px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(30px) rotate(240deg);
+    }
+  }
+
+  /* Header */
+  .header {
+    position: relative;
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .logo-text {
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--primary-purple)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .github-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .github-btn:hover {
+    background: var(--surface-glass-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .star-count {
+    color: var(--primary-blue);
+    font-weight: 600;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Text Content */
+  .text-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+  }
+
+  .badge:hover {
+    background: var(--surface-glass-hover);
+    transform: translateY(-1px);
+  }
+
+  .badge svg {
+    color: var(--primary-blue);
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .title-main {
+    display: block;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+  }
+
+  .title-sub {
+    display: block;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+
+  .description strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.875rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .btn:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--primary-purple)
+    );
+    color: white;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+  }
+
+  .btn-secondary {
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(20px);
+  }
+
+  .btn-secondary:hover {
+    background: var(--surface-glass-hover);
+    transform: translateY(-2px);
+  }
+
+  .quick-install {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    max-width: fit-content;
+  }
+
+  .install-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .install-code {
+    font-family: "Fira Code", monospace;
+    font-size: 0.875rem;
+    color: var(--primary-blue);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    user-select: all;
+  }
+
+  .copy-btn {
+    padding: 0.5rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 6px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copy-btn:hover {
+    background: var(--surface-glass-hover);
+    color: var(--text-primary);
+  }
+
+  /* Code Preview */
+  .code-preview {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    position: relative;
+  }
+
+  .code-window {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 80px rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .code-window:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 25px 50px rgba(0, 0, 0, 0.5),
+      0 0 100px rgba(59, 130, 246, 0.2);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: rgba(31, 41, 55, 0.6);
+    border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+  }
+
+  .code-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .dot-red {
+    background: #ef4444;
+  }
+
+  .dot-yellow {
+    background: #f59e0b;
+  }
+
+  .dot-green {
+    background: #10b981;
+  }
+
+  .code-window:hover .dot {
+    transform: scale(1.2);
+  }
+
+  .code-title {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-family: "Fira Code", monospace;
+  }
+
+  .code-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .code-action {
+    padding: 0.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .code-action:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+  }
+
+  .code-content {
+    padding: 1.5rem;
+    font-family: "Fira Code", "Monaco", "Consolas", monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    overflow-x: auto;
+  }
+
+  .code-content pre {
+    margin: 0;
+  }
+
+  .code-content code {
+    display: block;
+    white-space: pre;
+  }
+
+  /* Syntax Highlighting */
+  .code-comment {
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .code-keyword {
+    color: var(--primary-blue);
+    font-weight: 600;
+  }
+
+  .code-string {
+    color: var(--primary-green);
+  }
+
+  .code-selector {
+    color: var(--primary-purple);
+    font-weight: 600;
+  }
+
+  .code-property {
+    color: #f59e0b;
+  }
+
+  .code-value {
+    color: #ec4899;
+  }
+
+  /* Feature Pills */
+  .feature-pills {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+  }
+
+  .pill:hover {
+    background: var(--surface-glass-hover);
+    transform: translateY(-2px);
+  }
+
+  .pill-icon {
+    font-size: 1rem;
+  }
+
+  /* Animations */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .code-preview {
+      order: -1;
+    }
+
+    .description {
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 1rem;
+    }
+
+    .hero-content {
+      padding: 1rem;
+    }
+
+    .content-wrapper {
+      gap: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+    }
+
+    .quick-install {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .code-content {
+      font-size: 0.8rem;
+      padding: 1rem;
+    }
+
+    .feature-pills {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .badges {
+      justify-content: center;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .title-main {
+      font-size: 2.5rem;
+    }
+
+    .title-sub {
+      font-size: 1.125rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .quick-install {
+      width: 100%;
+    }
+
+    .install-code {
+      font-size: 0.75rem;
+      word-break: break-all;
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Focus styles */
+  .btn:focus-visible,
+  .github-btn:focus-visible,
+  .copy-btn:focus-visible,
+  .code-action:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+  }
+
+  /* High contrast mode */
+  @media (prefers-contrast: high) {
+    .hero {
+      background: #000000;
+    }
+
+    .badge,
+    .btn-secondary,
+    .github-btn,
+    .quick-install,
+    .code-window {
+      border-color: #ffffff;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .hero {
+      background: white;
+      color: black;
+    }
+
+    .floating-elements,
+    .bg-pattern,
+    .bg-gradient,
+    .bg-mesh {
+      display: none;
+    }
+
+    .btn,
+    .github-btn {
+      border: 1px solid black;
+      background: white;
+      color: black;
+    }
+  }
+
+  .dev-banner {
+    background: linear-gradient(90deg, #f59e0b 0%, #ef4444 100%);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.01em;
+    animation: fadeInUp 1s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  .text-content .dev-banner {
+    opacity: 1;
+  }
+</style>

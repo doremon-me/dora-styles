@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@styles/*": ["../../packages/cli/src/library/styles/*"]
+      "@styles/*": ["packages/library/styles/*"]
     }
   }
 }
