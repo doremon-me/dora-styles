@@ -1,7 +1,7 @@
 ---
-// src/pages/dora-styles.astro
+import "@styles/scss/variables.scss";
+import "@styles/scss/button.scss";
 export const prerender = true;
-
 const title = "Dora Styles - Modern CSS Library";
 const description =
   "Elegant, intuitive CSS for modern UIs. A lightweight, developer-friendly CSS library that combines utility-first design with component-based styling.";
@@ -300,6 +300,7 @@ const canonicalURL = "https://dorastyles.com";
             </div>
           </div>
         </div>
+        <button class="dora-btn">Click Me</button>
       </section>
 
       <!-- Floating Elements -->
